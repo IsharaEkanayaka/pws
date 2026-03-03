@@ -33,7 +33,7 @@ def provision():
     worker_count = request.form.get('worker_count', 2)
 
     def generate():
-        yield f"🚀 Intent Received: Provisioning {worker_count} workers...\n"
+        yield f" Intent Received: Provisioning {worker_count} workers...\n"
         yield "--------------------------------------------------\n"
         
         # FIX: We use escaped double quotes \" for Windows compatibility
@@ -43,7 +43,7 @@ def provision():
         for line in run_command(tf_cmd, TERRAFORM_DIR):
             yield line
 
-        yield f"\n✅ Terraform process finished for {worker_count} workers."
+        yield f"\n Terraform process finished for {worker_count} workers."
 
     return Response(generate(), mimetype='text/plain')
 

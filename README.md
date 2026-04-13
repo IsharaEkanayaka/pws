@@ -279,7 +279,7 @@ SQLite at `data/api.db`. Tables:
 
 ```bash
 conda activate k8s-api
-uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+set -a && source .env && set +a && uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### Manual Terraform/Ansible (standalone)

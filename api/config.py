@@ -6,7 +6,7 @@ TERRAFORM_DIR = os.path.join(PROJECT_ROOT, 'terraform')
 ANSIBLE_DIR = os.path.join(PROJECT_ROOT, 'ansible')
 WORKSPACES_DIR = os.path.join(PROJECT_ROOT, 'workspaces')
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
-DB_PATH = os.path.join(DATA_DIR, 'api.db')
+DB_PATH = os.getenv('KUBESMITH_DB', os.path.join(DATA_DIR, 'api.db'))
 
 GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID", "")
 GITHUB_CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET", "")
